@@ -1,0 +1,24 @@
+///*** Array sort ***\\\
+
+import java.util.Arrays;
+
+public class ArrarSort {
+public static void main(String[] args) 
+{
+		String a[]= {"Car","Car","Bus","Jeep","Mango"};
+		System.out.println("before:\n");
+		for(int i=0;i<a.length;i++) 
+		{
+			System.out.println(a[i]);
+		}
+		System.out.println("\n");
+		Arrays.sort( a );
+		System.out.println("after:\n");
+		for(int i=0;i<a.length;i++) 
+		{
+			System.out.println(a[i]);
+		}
+
+}
+
+}

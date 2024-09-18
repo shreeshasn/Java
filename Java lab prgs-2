@@ -1,0 +1,137 @@
+///***CUSTOMER_this_keyword***\\\
+
+package partA;
+class Customer
+{
+int custID;
+String name;
+int age;
+String phone;
+String place;
+Customer(int custID, String name, int age, String phone, String place)
+{
+this.custID = custID;
+this.name = name;
+this.age = age;
+this.phone = phone;
+this.place = place;
+}
+void displayDetails()
+{
+System.out.println(&quot;Customer ID: &quot; + this.custID);
+System.out.println(&quot;Name: &quot; + this.name);
+System.out.println(&quot;Age: &quot; + this.age);
+System.out.println(&quot;Phone: &quot; + this.phone);
+System.out.println(&quot;Place: &quot; + this.place);
+System.out.println(&quot;------------------------------&quot;);
+}
+}
+public class Program7 {
+public static void main(String[] args) {
+Customer[] customers = new Customer[3];
+customers[0] = new Customer(1, &quot;Alice&quot;, 25, &quot;9234567890&quot;, &quot;New
+
+York&quot;);
+
+customers[1] = new Customer(2, &quot;Bob&quot;, 30, &quot;9876543210&quot;, &quot;London&quot;);
+customers[2] = new Customer(3, &quot;Charlie&quot;, 28, &quot;6551234567&quot;,
+
+&quot;Sydney&quot;);
+
+for (Customer customer : customers)
+{
+
+customer.displayDetails();
+}
+}
+}
+
+
+///***EMPLOYEE_inheritance***\\\
+
+package partA;
+class Employee
+{
+int empID;
+String name;
+String phone;
+double salary;
+Employee(int empID, String name, String phone, double salary)
+{
+this.empID = empID;
+this.name = name;
+this.phone = phone;
+this.salary = salary;
+}
+void displayDetails()
+{
+System.out.println(&quot;Employee ID: &quot; + empID);
+System.out.println(&quot;Name: &quot; + name);
+System.out.println(&quot;Phone: &quot; + phone);
+System.out.println(&quot;Salary: $&quot; + salary);
+}
+}
+class Tester extends Employee
+{
+int projectID;
+String projectName;
+Tester(int empID, String name, String phone, double salary,
+int projectID, String projectName)
+{
+super(empID, name, phone, salary);
+this.projectID = projectID;
+this.projectName = projectName;
+}
+public void displayDetails()
+{
+super.displayDetails();
+System.out.println(&quot;Project ID: &quot; + projectID);
+System.out.println(&quot;Project Name: &quot; + projectName);
+System.out.println(&quot;------------------------------&quot;);
+
+}
+}
+class Developer extends Employee
+{
+String projectName;
+Developer(int empID, String name, String phone, double salary, String
+projectName)
+{
+super(empID, name, phone, salary);
+this.projectName = projectName;
+}
+void displayDetails()
+{
+super.displayDetails();
+System.out.println(&quot;Project Name: &quot; + projectName);
+System.out.println(&quot;------------------------------&quot;);
+}
+}
+public class Program8 {
+public static void main(String[] args) {
+Tester tester1 = new Tester(1, &quot;Alice&quot;, &quot;1234567890&quot;, 60000, 101,
+
+&quot;ProjectA&quot;);
+
+Tester tester2 = new Tester(2, &quot;Bob&quot;, &quot;9876543210&quot;, 65000, 102,
+
+&quot;ProjectB&quot;);
+
+Developer developer1 = new Developer(3, &quot;Charlie&quot;, &quot;5551234567&quot;,
+
+70000, &quot;ProjectC&quot;);
+
+Developer developer2 = new Developer(4, &quot;David&quot;, &quot;9998887776&quot;,
+
+75000, &quot;ProjectD&quot;);
+
+System.out.println(&quot;Tester 1 Details:&quot;);
+tester1.displayDetails();
+System.out.println(&quot;Tester 2 Details:&quot;);
+tester2.displayDetails();
+System.out.println(&quot;Developer 1 Details:&quot;);
+developer1.displayDetails();
+System.out.println(&quot;Developer 2 Details:&quot;);
+developer2.displayDetails();
+}
+}

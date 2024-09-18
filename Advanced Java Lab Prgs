@@ -50,3 +50,156 @@ public static void main(String[] args)
 		System.out.println("The Sum:"+sum);
 }
 }
+
+
+///***prime nos upto integer N***\\\
+package partA;
+import java.util.Scanner;
+public class Program1
+{
+public static void main(String[] args)
+{
+Scanner obj = new Scanner(System.in);
+System.out.print(&quot;Enter an integer N: &quot;);
+int N = obj.nextInt();
+System.out.print(&quot;Prime numbers up to &quot; + N + &quot; is:&quot;);
+for(int i = 2; i &lt;= N; i++)
+{
+boolean Prime = true;
+for(int j = 2; j&lt;i; j++)
+{
+if (i % j == 0)
+{
+Prime = false;
+break;
+}
+}
+if (Prime)
+{
+System.out.print(i + &quot; &quot;);
+}
+}
+
+obj.close();
+}
+}
+
+///***Box Parameters***\\\
+package partA;
+class Box
+{
+double width, height, depth;
+Box()
+{
+width = 1.0;
+height = 2.0;
+depth = 1.0;
+}
+Box(double width, double height, double depth)
+{
+this.width = width;
+this.height = height;
+this.depth = depth;
+}
+double Volume()
+{
+return width * height * depth;
+}
+}
+public class Program2
+{
+public static void main(String[] args)
+{
+Box box1 = new Box();
+System.out.println(&quot;Box 1 : Default Constructor&quot;);
+System.out.print(&quot;Width:&quot; + box1.width);
+System.out.print(&quot; Height:&quot; + box1.height);
+System.out.println(&quot; Depth:&quot; + box1.depth);
+System.out.println(&quot;The Volume is: &quot; + box1.Volume());
+System.out.println();
+Box box2 = new Box(2.5, 3.0, 4.0);
+System.out.println(&quot;Box 2 : Parameterized Constructor&quot;);
+System.out.print(&quot;Width: &quot; + box2.width);
+System.out.print(&quot; Height: &quot; + box2.height);
+System.out.println(&quot; Depth: &quot; + box2.depth);
+System.out.println(&quot;The Volume is: &quot; + box2.Volume());
+}
+}
+
+package partA;
+class Addnumber
+{
+int add(int num1, int num2)
+{
+return num1 + num2;
+}
+double add(double num1, double num2)
+{
+return num1 + num2;
+}
+int add(int num1, int num2, int num3)
+{
+return num1 + num2 + num3;
+}
+}
+public class Program3 {
+public static void main(String[] args) {
+Addnumber adder = new Addnumber();
+int sum1 = adder.add(5, 10);
+System.out.println(&quot;The sum1 value is: &quot; + sum1);
+double sum2 = adder.add(3.3, 2.7);
+System.out.println(&quot;The sum2 value is: &quot; + sum2);
+int sum3 = adder.add(2, 4, 6);
+System.out.println(&quot;The sum3 value is: &quot; + sum3);
+}
+}
+
+
+///***Method Overloading***\\\
+package partA;
+class Addnumber
+{
+int add(int num1, int num2)
+{
+return num1 + num2;
+}
+double add(double num1, double num2)
+{
+return num1 + num2;
+}
+int add(int num1, int num2, int num3)
+{
+return num1 + num2 + num3;
+}
+}
+public class Program3 {
+public static void main(String[] args) {
+Addnumber adder = new Addnumber();
+int sum1 = adder.add(5, 10);
+System.out.println(&quot;The sum1 value is: &quot; + sum1);
+double sum2 = adder.add(3.3, 2.7);
+System.out.println(&quot;The sum2 value is: &quot; + sum2);
+int sum3 = adder.add(2, 4, 6);
+System.out.println(&quot;The sum3 value is: &quot; + sum3);
+}
+}
+
+///***Byte Converison***\\\
+package partA;
+public class Program4
+{
+public static void main(String[] args)
+{
+int intValue = 257;
+byte narrowedByteValue = (byte) intValue;
+double widenedByteValue = intValue;
+System.out.println(&quot;Original Int Value: &quot; + intValue);
+System.out.println(&quot;Narrowed Byte Value (Explicit Casting): &quot; +
+
+narrowedByteValue);
+
+System.out.println(&quot;Widened Byte Value (Implicit Casting): &quot; +
+
+widenedByteValue);
+}
+}
